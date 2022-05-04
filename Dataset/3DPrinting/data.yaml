@@ -1,5 +1,0 @@
-train: ../3DPrinting/train/images
-val: ../3DPrinting/valid/images
-
-nc: 1
-names: ["fail"]

@@ -1,4 +1,0 @@
-train: ../3DPrintingAugmented_V1/Trainset
-val: ../3DPrintingAugmented_V1/Valset
-nc: 1
-names: ["Scratch"]
