@@ -36,50 +36,14 @@
     </div>
 
     <div class="content">
-      <h1 id="requirements">Requirements</h1>
+      <h1>Home</h1>
 
-      <p>Installez de quoi host un site Apache / PHP :</p>
+      <p>Lorem Ipsum</p>
       <pre>
         <code class="lang-bash">
-          sudo bash apt-get update
-          apt-get install apache2 php libapache2-mod-php
-          systemctl restart apache2
-        </code>
-      </pre>
-
-      <p>
-        Modifier la configuration de PHP pour accepter l'upload de fichiers plus
-        lourds (8Mo max sinon) :
-      </p>
-      <pre>
-        <code class="lang-bash">
-          sudo nano /etc/php/7.4/apache2/php.ini
-        </code>
-        <p>Remplissez-le comme suit :</p>
-        <code class="lang-bash">
-          file_uploads = On
-          post_max_size = 800M
-          upload_max_filesize = 800M
-        </code>
-      </pre>
-      <p>Créer un environnement virtuel python :</p>
-      <pre>
-        <code class="lang-bash">
-          python3 -m venv ./venv # Créer un environnement virtuel 
-          source venv/bin/activate 
-          which python3 # Cela doit pointer vers le dossier venv/bin 
-          which pip # Cela doit pointer vers le dossier venv/bin 
-          pip install -r YOLO/yolov5/requirements.txt ```
-        </code>
-      </pre>
-
-      <p>
-        Enfin, placez le contenu de ce dossier dans /var/www/html. Puis donnez
-        les autorisations root à ce dossier :
-      </p>
-      <pre>
-        <code class="lang-bash">
-          sudo chmod 777 -R /var/www/html
+          source Lorem Ipsum
+          apt-get Lorem Ipsum
+          systemctl restart Lorem Ipsum
         </code>
       </pre>
     </div>
