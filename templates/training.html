@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Project | Big Data</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/index.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <ul>
+        <li>
+          <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="/interface"><i class="fas fa-photo-video"></i> Inference</a>
+        </li>
+        <li>
+          <a href="/stream"><i class="fas fa-photo-video"></i> Webcam</a>
+        </li>
+        <li>
+          <a href="/doc"><i class="fas fa-book"></i> Documentation</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content" style="display: flex">
+      {% include 'training_notebook.html' %}
+
+      <form method="GET" action="/metrics" target="_blank">
+        <button
+          type="submit"
+          class="btn btn-4 btn-sep icon-metrics"
+          style="
+            border: none;
+            background-color: rgb(127, 193, 219);
+            font-family: 'Lato';
+            font-size: inherit;
+            color: #383838;
+            cursor: pointer;
+            padding: 25px 80px;
+            display: inline-block;
+            margin: 15px 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            outline: none;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+          "
+        >
+          Show Metrics
+        </button>
+      </form>
+      <br /><br />
+    </div>
+
+    <div class="footer">By Dorian VOYDIE</div>
+  </body>
+</html>

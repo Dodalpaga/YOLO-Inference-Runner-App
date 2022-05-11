@@ -1,7 +1,0 @@
-Scratch 380 161 570 555
-Scratch 520 122 585 547
-Scratch 436 103 475 205
-Scratch 396 43 423 206
-Scratch 1 256 131 273
-Scratch 200 34 261 56
-Scratch 527 1 561 24

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Project | Big Data</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename= 'images/logo.png') }}"
+      type="image/png"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/index.css') }}"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/interface.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/0c87a70838.js"></script>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <ul>
+        <li>
+          <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="/interface"><i class="fas fa-photo-video"></i> Inference</a>
+        </li>
+        <li>
+          <a href="/stream"><i class="fas fa-photo-video"></i> Webcam</a>
+        </li>
+        <li>
+          <a href="/doc"><i class="fas fa-book"></i> Documentation</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="form-cols form-cols-bis" style="align-items: center">
+        <div class="separation">
+          <div class="middle-text">Upload .pt file</div>
+          <form enctype="multipart/form-data" action="/upload_pt" method="POST">
+            <input class="choose" name="userfile" type="file" />
+            <div class="wrap">
+              <button class="button" type="submit">Upload</button>
+            </div>
+          </form>
+        </div>
+        <div class="separation">
+          <div class="middle-text">Upload images (multiple)</div>
+          <form
+            action="/upload_images"
+            enctype="multipart/form-data"
+            method="post"
+          >
+            <input
+              class="choose"
+              id="upload_images"
+              name="upload_images[]"
+              type="file"
+              multiple="multiple"
+              accept="image/*.jpeg , image/*.jpg"
+            />
+            <div class="wrap">
+              <button class="button" name="sub" type="submit">Upload</button>
+            </div>
+          </form>
+          <br />
+          <div class="middle-text">Upload labels (multiple)</div>
+          <form
+            action="/upload_labels"
+            enctype="multipart/form-data"
+            method="post"
+          >
+            <input
+              class="choose"
+              id="upload_labels"
+              name="upload_labels[]"
+              type="file"
+              multiple="multiple"
+              accept="*.txt"
+            />
+            <div class="wrap">
+              <button class="button" name="sub_label" type="submit">
+                Upload
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="form-cols">
+        <form method="POST" action="/inference">
+          <div
+            style="
+              display: flex;
+              justify-content: flex-start;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
+            <label
+              for="conf_threshold"
+              style="color: white; font-family: 'Lato'; margin: 15px"
+              >Choose a confidence threshold</label
+            >
+            <input
+              class="range"
+              type="range"
+              id="conf_threshold"
+              name="conf_threshold"
+              value="0.25"
+              min="0"
+              max="1"
+              step="0.05"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output style="color: white; font-family: 'Lato'">0.25</output>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: flex-start;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
+            <label
+              for="conf_threshold"
+              style="color: white; font-family: 'Lato'; margin: 15px"
+              >Choose an IoU for NMS</label
+            >
+            <input
+              class="range"
+              type="range"
+              id="iou"
+              name="iou"
+              value="0.45"
+              min="0"
+              max="1"
+              step="0.05"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output style="color: white; font-family: 'Lato'">0.45</output>
+          </div>
+          <button type="submit" class="btn btn-1 btn-sep icon-network">
+            Inference
+          </button>
+        </form>
+        <form method="GET" action="/clear_cache">
+          <button type="submit" class="btn btn-3 btn-sep icon-clear">
+            Clear Cache
+          </button>
+        </form>
+      </div>
+      <h2 style="color: white">Inferences</h2>
+      <div class="container">
+        <div class="row">
+          {% for image_name in image_names %}
+          <div>
+            <img
+              src=" {{url_for('send_image', filename=image_name)}}"
+              style="width: 1000px"
+            />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="footer">By Dorian VOYDIE</div>
+  </body>
+</html>
