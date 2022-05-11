@@ -128,8 +128,7 @@ def upload_labels():
 @app.route('/clear_cache', methods=['GET'])
 def clear_cache():
     os.system("rm -rf ./components/Test/Images_predites/*")
-    os.system("rm -rf ./components/Test/Prediction/*")
-    files = glob.glob('./components/Test/*.jpeg') + glob.glob('./components/Test/*.txt')
+    files = glob.glob('./components/Test/*.jpeg') + glob.glob('./components/Test/*.jpg') + glob.glob('./components/Test/*.txt')
     for f in files:
         os.remove(f)
     return redirect("/interface")
