@@ -8,7 +8,6 @@
 - [How it works ...](#how-it-works-)
   - [Inference Setion](#inference-setion)
   - [Webcam Section](#webcam-section)
-  - [Documentation](#documentation)
 
 # Project layout
 
@@ -51,7 +50,7 @@ Then, activate it so you can install the dependencies :
 # Requirements
 
 Once the venv is activated, install the python dependencies
-`pip install -r requirements.txt` - Install requirements
+`pip install -r requirements.txt`
 
 # Launch the server
 
@@ -62,6 +61,14 @@ To launch the flask server, type in a terminal :
 
 ## Inference Setion
 
+1. Import a yolo model (from a .pt file)
+2. Import test images
+3. Import test labels
+4. Tune Confidence Threshold and IoU Threshold for Non-Maximum Suppression
+5. Runs Inferences
+6. (Optional) Clear cache when importing new images/labels
+
 ## Webcam Section
 
-## Documentation
+1. Import a yolo model (from a .pt file) in the [Inference Setion](#inference-setion)
+2. Click on the "Webcam" tab and get live detection (~10/15 fps) using your own webcam
