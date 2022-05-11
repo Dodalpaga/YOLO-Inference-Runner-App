@@ -16,10 +16,8 @@
 📦YOLO-Object-Detection-Template
 ┣ 📦components
 ┃ ┣ 📂Test
-┃ ┃ ┣ 📂Images_predites
-┃ ┃ ┃ ┗ 📜.gitkeep
-┃ ┃ ┗ 📂Prediction
-┃ ┃ ┃ ┗ 📜.gitkeep
+┃ ┃ ┗ 📂Images_predites
+┃ ┃   ┗ 📜.gitkeep
 ┃ ┗ 📜weights.pt
 ┣ 📦static
 ┃ ┣ 📂css
@@ -37,70 +35,9 @@
 ┃ ┣ 📜live_streaming.html
 ┃ ┣ 📜training.html
 ┃ ┗ 📜training_notebook.html
-┗ 📦YOLO
-  ┣ 📂mAP
-  ┃ ┣ 📂.temp_files
-  ┃ ┣ 📂input
-  ┃ ┃ ┣ 📂detection-results
-  ┃ ┃ ┃ ┗ 📂backup
-  ┃ ┃ ┣ 📂ground-truth
-  ┃ ┃ ┃ ┗ 📂backup
-  ┃ ┃ ┗ 📂images
-  ┃ ┣ 📂output
-  ┃ ┃ ┗ 📂classes
-  ┃ ┣ 📂scripts
-  ┃ ┃ ┗ 📂extra
-  ┃ ┃ ┃ ┣ 📜README.md
-  ┃ ┃ ┃ ┣ 📜class_list.txt
-  ┃ ┃ ┃ ┣ 📜convert_dr_darkflow_json.py
-  ┃ ┃ ┃ ┣ 📜convert_dr_perso_yolo.py
-  ┃ ┃ ┃ ┣ 📜convert_dr_yolo.py
-  ┃ ┃ ┃ ┣ 📜convert_gt_xml.py
-  ┃ ┃ ┃ ┣ 📜convert_gt_yolo.py
-  ┃ ┃ ┃ ┣ 📜convert_keras-yolo3.py
-  ┃ ┃ ┃ ┣ 📜find_class.py
-  ┃ ┃ ┃ ┣ 📜intersect-gt-and-dr.py
-  ┃ ┃ ┃ ┗ 📜result.txt
-  ┃ ┣ 📜LICENSE
-  ┃ ┣ 📜README.md
-  ┃ ┗ 📜main.py
-  ┣ 📂yolov5
-  ┃ ┣ 📂data
-  ┃ ┣ 📂images
-  ┃ ┣ 📂models
-  ┃ ┣ 📂runs
-  ┃ ┃ ┗ 📂train
-  ┃ ┃ ┃ ┣ 📂exp1
-  ┃ ┃ ┃ ┃ ┣ 📂weights
-  ┃ ┃ ┃ ┃ ┃ ┣ 📜best.pt
-  ┃ ┃ ┃ ┃ ┃ ┗ 📜last.pt
-  ┃ ┃ ┃ ┃ ┣ 📜events.out.tfevents.1651744720.1ca71d3adcdf.367.0
-  ┃ ┃ ┃ ┃ ┣ 📜hyp.yaml
-  ┃ ┃ ┃ ┃ ┣ 📜labels.jpg
-  ┃ ┃ ┃ ┃ ┣ 📜labels_correlogram.jpg
-  ┃ ┃ ┃ ┃ ┣ 📜opt.yaml
-  ┃ ┃ ┃ ┃ ┣ 📜results.csv
-  ┃ ┃ ┃ ┃ ┣ 📜train_batch0.jpg
-  ┃ ┃ ┃ ┃ ┣ 📜train_batch1.jpg
-  ┃ ┃ ┃ ┃ ┗ 📜train_batch2.jpg
-  ┃ ┃ ┃ ┗ 📂exp2
-  ┃ ┃ ┃ ┃ ┣ 📂weights
-  ┃ ┃ ┃ ┃ ┃ ┣ 📜best.pt
-  ┃ ┃ ┃ ┃ ┃ ┗ 📜last.pt
-  ┃ ┃ ┃ ┃ ┣ 📜events.out.tfevents.1651492827.80c1f15bf8d7.289.0
-  ┃ ┃ ┃ ┃ ┣ 📜hyp.yaml
-  ┃ ┃ ┃ ┃ ┣ 📜labels.jpg
-  ┃ ┃ ┃ ┃ ┣ 📜labels_correlogram.jpg
-  ┃ ┃ ┃ ┃ ┣ 📜opt.yaml
-  ┃ ┃ ┃ ┃ ┣ 📜results.csv
-  ┃ ┃ ┃ ┃ ┣ 📜train_batch0.jpg
-  ┃ ┃ ┃ ┃ ┣ 📜train_batch1.jpg
-  ┃ ┃ ┃ ┃ ┗ 📜train_batch2.jpg
-  ┃ ┣ 📂utils
-  ┣ 📜Convert.py
-  ┣ 📜Evaluate.py
-  ┣ 📜Inference.py
-  ┗ 📜Training.ipynb
+┣ 🐍app.py
+┣ 📜README.md
+┗ 📜requirements.txt
 ```
 
 # Create (and activate) a Virtual Environment
