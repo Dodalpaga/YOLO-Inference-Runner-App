@@ -36,6 +36,14 @@ def send_image(filename):
     return send_from_directory("./components/Test/Images_predites", filename)
 
 ###################################################
+########### SLIDESHOW GALLERY #####################
+###################################################
+@app.route('/slideshow', methods=['GET', 'POST'])
+def slideshow():
+    image_names = [f for f in os.listdir('./components/Test/Images_predites') if not f.startswith('.')]
+    return render_template("slideshow.html", image_names=image_names)
+
+###################################################
 ########### DOCUMENT ##############################
 ###################################################
 
@@ -168,9 +176,10 @@ class Detection:
         :return: Trained Pytorch model.
         """
         if model_name:
-            model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_name, force_reload=False)
+            model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_name, force_reload=True)
+            print("Model Loaded :!", model_name)
         else:
-            model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=False)
+            model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True, force_reload=True)
         return model
 
     def score_frame(self, frame):
