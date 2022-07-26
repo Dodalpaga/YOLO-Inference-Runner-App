@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import glob
 import pathlib
+from os.path import exists
 
 UPLOAD_FOLDER = './components'
 DATASET_FOLDER = './components/Test'
@@ -274,7 +275,10 @@ def make_inferences_on_folder(conf_thres=0.25,iou=0.45):
         
     if len(imgs)!=0:
         # Model
-        model = torch.hub.load('ultralytics/yolov5', 'custom', path='components/weights.pt')  # default
+        if exists('components/weights.pt'):
+            model = torch.hub.load('ultralytics/yolov5', 'custom', path='components/weights.pt')  # default
+        else:
+            model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
         model.conf = conf_thres  # confidence threshold (0-1)
         model.iou = iou  # NMS IoU threshold (0-1)
